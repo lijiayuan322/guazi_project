@@ -60,7 +60,7 @@ if '正在打开中,请稍后' in response.text:
                     'url':url}
             mongo_insert_list.append(info)
             print(info)
-        #插入数据库
-        # my_collections.insert_many(mongo_insert_list)
+        # 插入数据库
+        my_collections.insert_many(mongo_insert_list)
 
 

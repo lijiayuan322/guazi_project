@@ -5,6 +5,7 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 import base64
+import os
 import random
 import re
 import time
@@ -166,7 +167,8 @@ class MyProxy:
 class CookieRegain:
     """重新获取cookie"""
     def __init__(self):
-        with open('guazi.js', 'r', encoding='utf-8') as f:
+
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'guazi.js'), 'r', encoding='utf-8') as f:
             self.js_read = f.read()
 
     def process_response(self, request, response, spider):
